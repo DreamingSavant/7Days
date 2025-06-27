@@ -50,20 +50,15 @@ class ViewController3: UIViewController {
             } catch {
                 print(error)
             }
-            
         }
-        
-
     }
     
-    // we wouldn't use ! for try! but this is an exmple
+    // we wouldn't use ! for try! but this is an example
     func getUser(url: URL) async throws {
         let (data, _) = try await URLSession.shared.data(from: url)
         let user = try JSONDecoder().decode(User.self, from: data)
         print(user)
     }
-    
-    
 }
 
 
